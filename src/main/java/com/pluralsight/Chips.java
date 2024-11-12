@@ -19,9 +19,8 @@ public class Chips extends Product{
 
     @Override
     public String toString() {
-        return "Chips{" +
-                "type=" + type +
-                ", size=" + size +
-                ", cost = $" + this.getCost()+"}";
+        return "Chips{" + type +
+                ", " + size +
+                ", $" + this.getCost()+"}";
     }
 }

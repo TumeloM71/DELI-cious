@@ -26,9 +26,8 @@ public class Drink extends Product{
 
     @Override
     public String toString() {
-        return "Drink{" +
-                "flavor=" + flavor +
-                ", size=" + size +
-                ", cost = $" + this.getCost()+"}";
+        return "Drink{" + flavor +
+                ", " + size +
+                ", $" + this.getCost()+"}";
     }
 }

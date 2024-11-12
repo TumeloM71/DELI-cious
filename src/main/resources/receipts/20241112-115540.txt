@@ -1,0 +1,31 @@
+Date & Time: 20241112-115540
+Item Count: 6
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Sandwich{size:Small, bread:wheat, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, tomatoes]
+, meat:[ham]
+, cheese:[]
+, sauces:[]
+, sides:[]
+, cost: $6.5}
+Sandwich{size:Medium, bread:wrap, toasted:false, extraMeat:true, extraCheese:false
+, regularToppings:[lettuce, tomatoes, cucumbers]
+, meat:[chicken]
+, cheese:[]
+, sauces:[mustard, ketchup]
+, sides:[]
+, cost: $10.0}
+Sandwich{size:Large, bread:wrap, toasted:false, extraMeat:true, extraCheese:false
+, regularToppings:[lettuce, tomatoes, onions]
+, meat:[bacon]
+, cheese:[]
+, sauces:[ketchup]
+, sides:[]
+, cost: $13.0}
+Drink{orange, Medium, $2.5}
+Drink{lime, Medium, $2.5}
+Drink{orange, Large, $3.0}
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $37.5

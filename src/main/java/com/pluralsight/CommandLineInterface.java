@@ -4,12 +4,16 @@ import com.pluralsight.enums.*;
 
 import java.util.Scanner;
 
-public class HomeScreen {
+public class CommandLineInterface {
 
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
 
+        homeScreen();
+    }
+
+    public static void homeScreen(){
         int selection;
         System.out.println("Welcome to the Sandwich Shop:");
         while (true){
@@ -26,7 +30,6 @@ public class HomeScreen {
             }
         }
     }
-
     public static void orderScreen(){
 
         Order order = new Order();
@@ -42,15 +45,27 @@ public class HomeScreen {
                 case 1 -> addSandwich(order);
                 case 2 -> addDrink(order);
                 case 3 -> addChips(order);
-                case 4 -> {
-                    order.listOrder();
-                    return;
-                }
+                case 4 -> checkOutMenu(order);
                 case 0 ->{
                     order.cancelOrder();
                     return;
                 }
             }
+        }
+    }
+
+    public static void checkOutMenu(Order order){
+        int selection;
+        order.listOrder();
+        System.out.println("""
+                1.Confirm \s
+                0.Cancel  \s
+                """);
+        selection = Utilities.getIntValue(input.nextLine().trim());
+        switch (selection){
+            case 1 ->{ order.checkOut(); homeScreen();}
+            case 0 -> { order.cancelOrder();
+             homeScreen();}
         }
     }
     public static void addDrink(Order order){
@@ -73,8 +88,8 @@ public class HomeScreen {
 
         System.out.println("""
                 Select the flavor:
-                1. orange,
-                2. lime,
+                1. orange
+                2. lime
                 3. grape""");
         DrinkFlavor flavor;
         int flavorChoice = Utilities.getIntValue(input.nextLine().trim());
