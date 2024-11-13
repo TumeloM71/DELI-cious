@@ -1,11 +1,17 @@
-package com.pluralsight;
+package com.pluralsight.GUIClasses;
 
+import com.pluralsight.FoodClasses.Drink;
+import com.pluralsight.Order;
 import com.pluralsight.enums.DrinkFlavor;
 import com.pluralsight.enums.Size;
 
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class for adding drinks to a user's Order with GUI elements
+ * @author Tumelo Marongwe
+ */
 public class AddDrinkGUI {
 
     public static void addDrink(Order order){
@@ -35,7 +41,8 @@ public class AddDrinkGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return size[0];
@@ -59,7 +66,8 @@ public class AddDrinkGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return flavor[0];

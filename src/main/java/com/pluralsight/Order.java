@@ -1,14 +1,16 @@
 package com.pluralsight;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import com.pluralsight.HelperClasses.ReceiptWriter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Class that represents the customer's order
+ * @author Tumelo Marongwe
+ */
 public class Order {
 
     private List<Product> items;
@@ -34,22 +36,52 @@ public class Order {
         return items.stream().mapToDouble(Product::getCost).reduce(0, Double::sum);
     }
 
+    /**
+    This method maps each item in the order to it's quantity
+     */
+    public HashMap<Product,Integer> productToQuantityMap(){
+
+        HashMap<Product,Integer> productToQuantity = new HashMap<>();
+        for (Product p : items){
+            productToQuantity.put(p, productToQuantity.getOrDefault(p, 0)+1);
+        }
+
+        return productToQuantity;
+    }
+
+    /**
+     * List method for the Order items
+     */
     public void listOrder(){
         System.out.println("Your order:");
-        this.items.forEach(System.out::println);
-        System.out.println();
+
+        Map<Product,Integer> productQuantityMap = productToQuantityMap();
+        for(Product p : productQuantityMap.keySet()){
+            System.out.println(p + " Amount: "+productQuantityMap.get(p));
+        }
         double cost = getTotalCost();
         System.out.println("Cost: $"+cost);
     }
     @Override
     public String toString(){
+
+        Map<Product,Integer> productQuantityMap = productToQuantityMap();
+        for(Product p : productQuantityMap.keySet()){
+            System.out.println(p + " Amount: "+productQuantityMap.get(p));
+        }
+
         StringBuilder output = new StringBuilder();
-        this.items.forEach( e -> output.append(e).append("\n") );
-        output.append("Cost: ").append(getTotalCost());
+        productQuantityMap.keySet().forEach(p -> output.append(p).append(" Amount: ")
+        .append(productQuantityMap.get(p)).append("\n"));
+
+        output.append("Cost: $").append(getTotalCost());
 
         return output.toString();
     }
 
+    /**
+     * Check out method
+     */
     public void checkOut(){
         ReceiptWriter.writeReceipt(this);
         System.out.println("Checked out successfully.");

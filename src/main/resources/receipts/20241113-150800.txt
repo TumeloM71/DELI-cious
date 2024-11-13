@@ -1,15 +1,16 @@
-Date & Time: 20241113-114802
+The Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241113-150800
 Item Count: 2
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-Sandwich{size:Small, bread:wheat, toasted:false, extraMeat:false, extraCheese:false
+Sandwich{size:Small, bread:white, toasted:false, extraMeat:false, extraCheese:false
 , regularToppings:[tomatoes]
 , meat:[ham]
 , cheese:[cheddar]
 , sauces:[]
 , sides:[]
-, cost: $7.25}
-Drink{lime, Small, $2.0}
+, cost: $7.25} Amount: 1
+Drink{Flavor: orange, Size: Medium, Cost: $2.50} Amount: 1
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Total: $9.25
+Total: $9.75

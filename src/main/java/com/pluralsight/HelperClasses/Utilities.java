@@ -1,11 +1,13 @@
-package com.pluralsight;
+package com.pluralsight.HelperClasses;
 
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 
-//Class for handling user input with try-catch blocks
+/**Class for handling user input with try-catch blocks
+ * @author Tumelo Marongwe
+ */
 public class Utilities {
 
     public static long getLongValue(String in)

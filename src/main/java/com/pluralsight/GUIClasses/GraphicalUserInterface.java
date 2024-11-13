@@ -1,13 +1,17 @@
-package com.pluralsight;
+package com.pluralsight.GUIClasses;
+
+import com.pluralsight.Order;
+import com.pluralsight.HelperClasses.ReceiptWriter;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class GraphicalUserInterface {
+/**
+ *  Driver class for the GUI
+ *  @author Tumelo Marongwe
+ */
 
-    public static void main(String[] args) {
-        homeScreen();
-    }
+public class GraphicalUserInterface {
 
     public static void homeScreen(){
         MyFrame myFrame = new MyFrame();
@@ -27,6 +31,9 @@ public class GraphicalUserInterface {
         panel1.add(b1); panel1.add(b2);
         myFrame.add(panel1, BorderLayout.CENTER);
         myFrame.add(panel2, BorderLayout.NORTH);
+
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
     }
 
     public static void newOrderScreen(){
@@ -52,6 +59,8 @@ public class GraphicalUserInterface {
 
         panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel, BorderLayout.CENTER);
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
     }
 
     public static void orderScreen(Order order){
@@ -75,6 +84,8 @@ public class GraphicalUserInterface {
 
         panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel, BorderLayout.CENTER);
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
     }
 
     public static void checkOutMenu(Order order){
@@ -84,9 +95,11 @@ public class GraphicalUserInterface {
         JPanel panel = new JPanel();
         panel.setBackground(Color.orange);
 
+        JOptionPane.showMessageDialog(null, order);
+
         JButton b1 = new JButton("Confirm");
-        b1.addActionListener(e -> { JOptionPane.showMessageDialog(null, order);
-        ReceiptWriter.writeReceipt(order); myFrame.dispose(); homeScreen();});
+        b1.addActionListener(e -> {ReceiptWriter.writeReceipt(order);
+        myFrame.dispose(); homeScreen();});
         JButton b2 = new JButton("Cancel");
         b2.addActionListener(e -> { order.cancelOrder(); myFrame.dispose(); GraphicalUserInterface.homeScreen(); });
 
@@ -94,7 +107,8 @@ public class GraphicalUserInterface {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }

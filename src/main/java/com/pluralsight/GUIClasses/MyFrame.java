@@ -1,9 +1,12 @@
 
-package com.pluralsight;
+package com.pluralsight.GUIClasses;
 
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ *  My custom JFrame child class
+ *  @author Tumelo Marongwe
+ */
 public class MyFrame extends JFrame {
 
     public MyFrame(){

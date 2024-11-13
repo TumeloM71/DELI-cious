@@ -1,5 +1,9 @@
-package com.pluralsight;
+package com.pluralsight.HelperClasses;
 
+import com.pluralsight.FoodClasses.Chips;
+import com.pluralsight.FoodClasses.Drink;
+import com.pluralsight.FoodClasses.Sandwich;
+import com.pluralsight.Order;
 import com.pluralsight.enums.*;
 
 import java.util.Scanner;
@@ -8,7 +12,7 @@ public class CommandLineInterface {
 
     static Scanner input = new Scanner(System.in);
 
-    /*
+    /**
     Displays the CLI version of the home screen
      */
     public static void homeScreen(){
@@ -29,7 +33,7 @@ public class CommandLineInterface {
         }
     }
 
-    /*
+    /**
     Displays the order screen which lets the customer add items to the order(sandwiches, drinks or chips)
      */
     public static void orderScreen(){
@@ -56,8 +60,9 @@ public class CommandLineInterface {
         }
     }
 
-    /*
-    Lets the customer confirm their check out or cancel the order
+    /**
+    Lets the customer confirm their checkout or cancel the order
+    @param order the customer's order
      */
     public static void checkOutMenu(Order order){
         int selection;
@@ -74,8 +79,9 @@ public class CommandLineInterface {
         }
     }
 
-    /*
+    /**
     Menu for adding a drink to the customer's order. Asks for drink size and flavor
+     @param order the customer's order
      */
     public static void addDrink(Order order){
         System.out.println("""
@@ -114,8 +120,9 @@ public class CommandLineInterface {
         order.addItem(drink);
     }
 
-    /*
+    /**
     Method for adding chips to the customer's order. Asks the chip type and portion size
+     @param order the customer's order
      */
     public static void addChips(Order order){
         System.out.println("""
@@ -154,8 +161,9 @@ public class CommandLineInterface {
         order.addItem(chips);
     }
 
-    /*
-    Method for adding a sandwich to the customer's order. Asks for size, breadtype and which toppings to add
+    /**
+    Method for adding a sandwich to the customer's order. Asks for size, bread type and which toppings to add
+     @param order the customer's order
      */
     public static void addSandwich(Order order){
         System.out.println("""
@@ -227,8 +235,9 @@ public class CommandLineInterface {
             }
         }
     }
-    /*
+    /**
     Method for adding free regular toppings to a Sandwich
+     @param sandwich the customer's sandwich
      */
     public static void addRegularToppings(Sandwich sandwich){
 
@@ -266,8 +275,9 @@ public class CommandLineInterface {
         }
     }
 
-    /*
+    /**
     Method for adding meat toppings to a sandwich
+     @param sandwich the customer's sandwich
      */
     public static void addMeatToppings(Sandwich sandwich){
 
@@ -303,8 +313,9 @@ public class CommandLineInterface {
 
     }
 
-    /*
+    /**
     Method for adding cheese toppings to a Sandwich
+     @param sandwich the customer's sandwich
      */
     public static void addCheeseToppings(Sandwich sandwich){
 
@@ -335,8 +346,9 @@ public class CommandLineInterface {
         }
     }
 
-    /*
+    /**
     Method for adding sauces to a sandwich
+     @param sandwich the customer's sandwich
      */
     public static void addSauces(Sandwich sandwich){
 
@@ -366,8 +378,9 @@ public class CommandLineInterface {
         }
     }
 
-    /*
+    /**
     Method for adding sides to a Sandwich
+     @param sandwich the customer's sandwich
      */
     public static void addSides(Sandwich sandwich){
 

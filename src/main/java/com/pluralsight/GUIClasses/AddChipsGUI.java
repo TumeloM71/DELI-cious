@@ -1,11 +1,17 @@
-package com.pluralsight;
+package com.pluralsight.GUIClasses;
 
+import com.pluralsight.FoodClasses.Chips;
+import com.pluralsight.Order;
 import com.pluralsight.enums.ChipType;
 import com.pluralsight.enums.Size;
 
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class for adding chips to a user's Order with GUI elements
+ * @author Tumelo Marongwe
+ */
 public class AddChipsGUI {
     public static void addChips(Order order){
 
@@ -34,7 +40,8 @@ public class AddChipsGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return size[0];
@@ -58,7 +65,8 @@ public class AddChipsGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return type[0];

@@ -1,10 +1,16 @@
-package com.pluralsight;
+package com.pluralsight.GUIClasses;
 
+import com.pluralsight.FoodClasses.Sandwich;
+import com.pluralsight.Order;
 import com.pluralsight.enums.*;
 
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class for adding a Sandwich to a user's Order with GUI elements
+ * @author Tumelo Marongwe
+ */
 public class AddSandwichGUI {
 
     public static void addSandwich(Order order){
@@ -37,7 +43,8 @@ public class AddSandwichGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return size[0];
@@ -65,7 +72,8 @@ public class AddSandwichGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
         return bread[0];
@@ -98,7 +106,8 @@ public class AddSandwichGUI {
         panel.add(b6);
         myFrame.add(panel);
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }
@@ -130,7 +139,8 @@ public class AddSandwichGUI {
         myFrame.add(panel,BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }
@@ -152,7 +162,8 @@ public class AddSandwichGUI {
         myFrame.add(panel);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }
@@ -180,7 +191,8 @@ public class AddSandwichGUI {
         myFrame.add(panel, BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
     }
 
@@ -201,7 +213,8 @@ public class AddSandwichGUI {
         myFrame.add(panel);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }
@@ -240,7 +253,8 @@ public class AddSandwichGUI {
         myFrame.add(panel,BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
     }
 
@@ -262,7 +276,8 @@ public class AddSandwichGUI {
         myFrame.add(panel,BorderLayout.CENTER);
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
     }
 
@@ -294,7 +309,8 @@ public class AddSandwichGUI {
 
 
         myFrame.setModal(true);
-        myFrame.pack();
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
         myFrame.setVisible(true);
 
     }
