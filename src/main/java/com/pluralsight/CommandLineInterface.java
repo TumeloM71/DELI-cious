@@ -8,11 +8,9 @@ public class CommandLineInterface {
 
     static Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) {
-
-        homeScreen();
-    }
-
+    /*
+    Displays the CLI version of the home screen
+     */
     public static void homeScreen(){
         int selection;
         System.out.println("Welcome to the Sandwich Shop:");
@@ -30,6 +28,10 @@ public class CommandLineInterface {
             }
         }
     }
+
+    /*
+    Displays the order screen which lets the customer add items to the order(sandwiches, drinks or chips)
+     */
     public static void orderScreen(){
 
         Order order = new Order();
@@ -54,6 +56,9 @@ public class CommandLineInterface {
         }
     }
 
+    /*
+    Lets the customer confirm their check out or cancel the order
+     */
     public static void checkOutMenu(Order order){
         int selection;
         order.listOrder();
@@ -68,6 +73,10 @@ public class CommandLineInterface {
              homeScreen();}
         }
     }
+
+    /*
+    Menu for adding a drink to the customer's order. Asks for drink size and flavor
+     */
     public static void addDrink(Order order){
         System.out.println("""
                 Select your drink size:
@@ -105,6 +114,9 @@ public class CommandLineInterface {
         order.addItem(drink);
     }
 
+    /*
+    Method for adding chips to the customer's order. Asks the chip type and portion size
+     */
     public static void addChips(Order order){
         System.out.println("""
                 Select your chips' size:
@@ -142,6 +154,9 @@ public class CommandLineInterface {
         order.addItem(chips);
     }
 
+    /*
+    Method for adding a sandwich to the customer's order. Asks for size, breadtype and which toppings to add
+     */
     public static void addSandwich(Order order){
         System.out.println("""
                 Select your sandwich size:
@@ -212,7 +227,9 @@ public class CommandLineInterface {
             }
         }
     }
-
+    /*
+    Method for adding free regular toppings to a Sandwich
+     */
     public static void addRegularToppings(Sandwich sandwich){
 
         int selection;
@@ -249,6 +266,9 @@ public class CommandLineInterface {
         }
     }
 
+    /*
+    Method for adding meat toppings to a sandwich
+     */
     public static void addMeatToppings(Sandwich sandwich){
 
         int selection;
@@ -283,6 +303,9 @@ public class CommandLineInterface {
 
     }
 
+    /*
+    Method for adding cheese toppings to a Sandwich
+     */
     public static void addCheeseToppings(Sandwich sandwich){
 
         int selection ;
@@ -312,6 +335,9 @@ public class CommandLineInterface {
         }
     }
 
+    /*
+    Method for adding sauces to a sandwich
+     */
     public static void addSauces(Sandwich sandwich){
 
         int selection;
@@ -340,6 +366,9 @@ public class CommandLineInterface {
         }
     }
 
+    /*
+    Method for adding sides to a Sandwich
+     */
     public static void addSides(Sandwich sandwich){
 
         int selection;

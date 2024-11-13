@@ -41,6 +41,14 @@ public class Order {
         double cost = getTotalCost();
         System.out.println("Cost: $"+cost);
     }
+    @Override
+    public String toString(){
+        StringBuilder output = new StringBuilder();
+        this.items.forEach( e -> output.append(e).append("\n") );
+        output.append("Cost: ").append(getTotalCost());
+
+        return output.toString();
+    }
 
     public void checkOut(){
         ReceiptWriter.writeReceipt(this);

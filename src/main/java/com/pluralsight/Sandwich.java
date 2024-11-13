@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import com.pluralsight.enums.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -51,6 +52,15 @@ public class Sandwich extends Product{
             System.out.println("Topping was already present");
     }
 
+    public void addRegularToppingsGUI(RegularToppings t){
+        if (!regularToppings.contains(t)) {
+            regularToppings.add(t);
+            JOptionPane.showMessageDialog(null, "Added successfully");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Topping was already present");
+    }
+
     public void removeRegularTopping(RegularToppings t){
         if (regularToppings.remove(t))
             System.out.println("Removed successfully");
@@ -67,6 +77,15 @@ public class Sandwich extends Product{
             System.out.println("Topping was already present");
     }
 
+    public void addMeatGUI(Meat meat) {
+        if (!meats.contains(meat)){
+            meats.add(meat);
+            JOptionPane.showMessageDialog(null, "Added successfully");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Topping was already present");
+    }
+
     public void removeMeat(Meat meat){
         meats.remove(meat);
     }
@@ -80,6 +99,18 @@ public class Sandwich extends Product{
             System.out.println("Topping was already present");
 
     }
+
+    public void addCheeseGUI (Cheeses cheese){
+        if( !cheeses.contains(cheese)){
+            cheeses.add(cheese);
+            JOptionPane.showMessageDialog(null, "Added successfully");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Topping was already present");
+
+    }
+
+
 
     public void removeCheese(Cheeses cheese){
         cheeses.remove(cheese);
@@ -95,6 +126,16 @@ public class Sandwich extends Product{
 
     }
 
+    public void addSauceGUI(Sauces sauce){
+        if (!sauces.contains(sauce)){
+            sauces.add(sauce);
+            JOptionPane.showMessageDialog(null, "Added successfully");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Topping was already present");
+
+    }
+
     public void removeSauce(Sauces sauce){
         sauces.remove(sauce);
     }
@@ -106,6 +147,16 @@ public class Sandwich extends Product{
         }
         else
             System.out.println("Side was already present");
+
+    }
+
+    public void addSideGUI(Sides side){
+        if ( !sides.contains(side)){
+            sides.add(side);
+            JOptionPane.showMessageDialog(null, "Added successfully");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Topping was already present");
 
     }
 

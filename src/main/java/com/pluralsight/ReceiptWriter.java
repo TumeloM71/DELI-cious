@@ -1,6 +1,8 @@
 package com.pluralsight;
 
+import java.awt.*;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,6 +28,8 @@ public class ReceiptWriter {
             bufferedWriter.write(dashedLine+"\n");
             bufferedWriter.write("Total: $"+order.getTotalCost());
             bufferedWriter.close();
+            File receipt = new File("src/main/resources/receipts/"+date+".txt");
+            Desktop.getDesktop().open(receipt);
         }
         catch (Exception e){
             e.printStackTrace();
