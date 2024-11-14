@@ -34,3 +34,11 @@ Checkout
 ![Screenshot (124)](https://github.com/user-attachments/assets/e5aeb517-1874-4399-98df-81391cb920e0)
 ![Screenshot (125)](https://github.com/user-attachments/assets/8e23b854-04d0-434a-b64f-d6c7e54fa94d)
 ![Screenshot (126)](https://github.com/user-attachments/assets/c586feef-6dfd-441a-8d88-9758836a1294)
+
+Adding a Signature Sandwich
+![Screenshot (127)](https://github.com/user-attachments/assets/d91104a4-7f7c-4e0d-baf1-7bef61284c1e)
+![Screenshot (128)](https://github.com/user-attachments/assets/1f53ae1a-dc19-4826-8f75-0639de3b2688)
+![Screenshot (129)](https://github.com/user-attachments/assets/83d2a334-c974-41e8-8be8-a220b264cd20)
+![Screenshot (130)](https://github.com/user-attachments/assets/8fd9d73c-0d5e-4576-bc9c-e309fa7c65ea)
+![Screenshot (131)](https://github.com/user-attachments/assets/34163f54-8f7c-4ea3-9c12-3d2143c6b39f)
+![Screenshot (132)](https://github.com/user-attachments/assets/8a695e1a-5475-4636-801d-2eeb7ebb0f15)
