@@ -22,7 +22,12 @@ public class AddChipsGUI {
         GraphicalUserInterface.orderScreen(order);
     }
 
+    /**
+     * Get the portion size from the customer
+      * @return the chips Size
+     */
     public static Size selectChipsSize(){
+        //Used an array, so I could change the value in the lambda expression
         Size[] size = {Size.Small};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -47,7 +52,12 @@ public class AddChipsGUI {
         return size[0];
     }
 
+    /**
+     *
+     * @return the ChipType selected by the user
+     */
     public static ChipType selectChipType(){
+        //Used an array, so I could change the value in the lambda expression
         ChipType[] type = {ChipType.steak_fries};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());

@@ -1,6 +1,6 @@
 package com.pluralsight.GUIClasses;
 
-import com.pluralsight.FoodClasses.Sandwich;
+import com.pluralsight.FoodClasses.*;
 import com.pluralsight.Order;
 import com.pluralsight.enums.*;
 
@@ -13,6 +13,10 @@ import java.awt.*;
  */
 public class AddSandwichGUI {
 
+    /**
+     *  Menu for adding a Sandwich to the Order
+     * @param order the customer's Order
+     */
     public static void addSandwich(Order order){
 
         Size size = selectSandwichSize();
@@ -25,7 +29,138 @@ public class AddSandwichGUI {
         GraphicalUserInterface.orderScreen(order);
     }
 
+    public static void addSignatureSandwich(Order order){
+
+        Sandwich sandwich = signatureSandwichMenu();
+        customizeSignatureSandwich(sandwich);
+        order.addItem(sandwich);
+        GraphicalUserInterface.orderScreen(order);
+    }
+
+    /**
+     * Menu of5 signature sandwiches to chose from
+     * @return the chosen Sandwich
+     */
+    public static Sandwich signatureSandwichMenu(){
+
+        JDialog myFrame = new JDialog();
+        myFrame.setLayout(new BorderLayout());
+        myFrame.setTitle("Signature Sandwiches");
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.orange);
+
+        Sandwich[] sandwich = {new Sandwich()};
+
+        JButton b1 = new JButton("BLT");
+        b1.addActionListener(e ->{ myFrame.dispose(); sandwich[0] = new BLT();} );
+        JButton b2 = new JButton("Chicken Caesar Wrap");
+        b2.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new ChickenCaesarWrap();});
+        JButton b3 = new JButton("Classic Club");
+        b3.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new ClassicClub();});
+        JButton b4 = new JButton("Ham & Cheese");
+        b4.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new HamAndCheese();});
+        JButton b5 = new JButton("Philly Cheese Steak");
+        b5.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new PhillyCheeseSteak();});
+
+        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
+        myFrame.add(panel);
+        myFrame.setModal(true);
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
+        myFrame.setVisible(true);
+
+        return sandwich[0];
+    }
+
+    /**
+     * Menu for adding/removing toppings from the customer's Sandwich
+     * @param sandwich the customer's Sandwich
+     */
+    public static void customizeSignatureSandwich(Sandwich sandwich){
+        JDialog myFrame = new JDialog();
+        myFrame.setLayout(new BorderLayout());
+        myFrame.setTitle("Customise Signature Sandwich");
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.orange);
+
+        JButton b1 = new JButton("Add toppings");
+        b1.addActionListener(e ->{ myFrame.dispose(); toppingsAndSaucesMenu(sandwich);} );
+        JButton b2 = new JButton("Remove toppings");
+        b2.addActionListener(e -> {myFrame.dispose(); removeToppings(sandwich);});
+        JButton b3 = new JButton("Done");
+        b3.addActionListener(e -> { myFrame.dispose(); });
+
+        panel.add(b1); panel.add(b2); panel.add(b3);
+
+        myFrame.add(panel);
+        myFrame.setModal(true);
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
+        myFrame.setVisible(true);
+
+    }
+
+    /**
+     * Method for removing toppings from a sandwich
+     * @param sandwich the Sandwich to be modified
+     */
+    public static void removeToppings(Sandwich sandwich){
+        JDialog myFrame = new JDialog();
+        myFrame.setLayout(new BorderLayout());
+        myFrame.setTitle("Remove toppings");
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.orange);
+
+        for (RegularToppings r : sandwich.getRegularToppings()){
+            JButton button = new JButton(r.name());
+            button.addActionListener(e ->{ sandwich.removeRegularTopping(r); myFrame.dispose();
+                removeToppings(sandwich);});
+            panel.add(button);
+        }
+
+        for (Meat m : sandwich.getMeats()){
+            JButton button = new JButton(m.name());
+            button.addActionListener(e ->{ sandwich.removeMeat(m); myFrame.dispose();
+                removeToppings(sandwich);});
+            panel.add(button);
+        }
+
+        for (Cheeses c : sandwich.getCheeses()){
+            JButton button = new JButton(c.name());
+            button.addActionListener(e -> {sandwich.removeCheese(c);myFrame.dispose();
+                removeToppings(sandwich);});
+            panel.add(button);
+        }
+
+        for (Sides s : sandwich.getSides()){
+            JButton button = new JButton(s.name());
+            button.addActionListener(e -> {sandwich.removeSide(s); myFrame.dispose();
+                removeToppings(sandwich);});
+            panel.add(button);
+        }
+
+        for (Sauces s : sandwich.getSauces()){
+            JButton button = new JButton(s.name());
+            button.addActionListener(e -> {sandwich.removeSauce(s); myFrame.dispose();
+                removeToppings(sandwich);});
+            panel.add(button);
+        }
+
+        JButton b0 = new JButton("Done");
+        b0.addActionListener(e -> {myFrame.dispose(); customizeSignatureSandwich(sandwich);});
+        panel.add(b0);
+
+        myFrame.add(panel);
+        myFrame.setModal(true);
+        myFrame.setSize(new Dimension(400,400));
+        myFrame.setLocationRelativeTo(null);
+        myFrame.setVisible(true);
+    }
+    /**
+     * Menu for selecting the Sandwich size
+     */
     public static Size selectSandwichSize(){
+        //Used an array so I could change the value in the lambda expression
         Size[] size = {Size.Small};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -50,8 +185,12 @@ public class AddSandwichGUI {
         return size[0];
     }
 
+    /**
+     * Menu for selected the Sandwich BreadType
+     */
     public static Bread selectSandwichBread(){
 
+        //Used an array so I could change the value in the lambda expression
         Bread[] bread = {Bread.wheat};
 
         JDialog myFrame = new JDialog();
@@ -111,6 +250,11 @@ public class AddSandwichGUI {
         myFrame.setVisible(true);
 
     }
+
+    /**
+     * Adds the selected meat toppings to the Sandwich
+     * @param sandwich the customer's Sandwich
+     */
     public static void selectMeatToppings(Sandwich sandwich){
 
         JDialog myFrame = new JDialog();
@@ -145,6 +289,10 @@ public class AddSandwichGUI {
 
     }
 
+    /**
+     * sets the hasExtraMeat boolean after adding meat to the sandwich after prompting the customer
+     * @param sandwich the customer's Sanwich
+     */
     public static void extraMeatPopUp(Sandwich sandwich){
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -196,6 +344,10 @@ public class AddSandwichGUI {
         myFrame.setVisible(true);
     }
 
+    /**
+     * Sets the hasExtraCheese boolean after the customer is done adding cheese to their sandwich
+     * @param sandwich the customer's Sandwich
+     */
     public static void extraCheesePopUp(Sandwich sandwich){
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -219,6 +371,10 @@ public class AddSandwichGUI {
 
     }
 
+    /**
+     * Adds the selected regular toppings to the Sandwich
+     * @param sandwich the customer's Sandwich
+     */
     public static void selectRegularToppings(Sandwich sandwich){
 
         JDialog myFrame = new JDialog();
@@ -258,6 +414,10 @@ public class AddSandwichGUI {
         myFrame.setVisible(true);
     }
 
+    /**
+     * Adds the selected sides to the Sandwich
+     * @param sandwich the customer's Sandwich
+     */
     public static void selectSides(Sandwich sandwich){
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -281,6 +441,10 @@ public class AddSandwichGUI {
         myFrame.setVisible(true);
     }
 
+    /**
+     * Adds the selected sauces to the Sandwich
+     * @param sandwich the customer's Sandwich
+     */
     public static void selectSauces(Sandwich sandwich){
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -306,7 +470,6 @@ public class AddSandwichGUI {
         panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         panel.add(b6); panel.add(b0);
         myFrame.add(panel,BorderLayout.CENTER);
-
 
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));

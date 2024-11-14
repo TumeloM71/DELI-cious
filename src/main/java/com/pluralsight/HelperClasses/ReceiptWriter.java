@@ -24,7 +24,7 @@ public class ReceiptWriter {
             String date = df.format(LocalDateTime.now());
             FileWriter fileWriter = new FileWriter("src/main/resources/receipts/"+date+".txt");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write("The Sandwich Shop, Dallas, TX\n");
+            bufferedWriter.write("DELI-cious Sandwich Shop, Dallas, TX\n");
             String dashedLine = "-".repeat(80);
             bufferedWriter.write(dashedLine+"\n");
             bufferedWriter.write(dashedLine+"\n");
@@ -41,7 +41,7 @@ public class ReceiptWriter {
 
             bufferedWriter.write(dashedLine+"\n");
             bufferedWriter.write(dashedLine+"\n");
-            bufferedWriter.write("Total: $"+order.getTotalCost());
+            bufferedWriter.write(String.format("Total: $%.2f",order.getTotalCost()));
             bufferedWriter.close();
             File receipt = new File("src/main/resources/receipts/"+date+".txt");
             Desktop.getDesktop().open(receipt);

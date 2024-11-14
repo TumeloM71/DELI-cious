@@ -1,8 +1,6 @@
 package com.pluralsight.HelperClasses;
 
-import com.pluralsight.FoodClasses.Chips;
-import com.pluralsight.FoodClasses.Drink;
-import com.pluralsight.FoodClasses.Sandwich;
+import com.pluralsight.FoodClasses.*;
 import com.pluralsight.Order;
 import com.pluralsight.enums.*;
 
@@ -41,7 +39,7 @@ public class CommandLineInterface {
         Order order = new Order();
         while (true){
             System.out.println("""
-                    1) Add Sandwich \s
+                    1) Add Custom Sandwich \s
                     2) Add Drink \s
                     3) Add Chips \s
                     4) Checkout \s
@@ -60,6 +58,32 @@ public class CommandLineInterface {
         }
     }
 
+//    public static void addSignatureSandwich(Order order){
+//
+//        int sandwichSelection;
+//        System.out.println("""
+//                    1) BLT \s
+//                    2) Philly Cheese Steak \s
+//                    3) Classic Club \s
+//                    4) Ham & Cheese \s
+//                    5) Chicken Caesar Wrap \s
+//                    0) Cancel Order""");
+//
+//        sandwichSelection = Utilities.getIntValue(input.nextLine().trim());
+//        Sandwich sandwich;
+//        switch (sandwichSelection){
+//            case 1 -> sandwich = new BLT();
+//            case 2 -> sandwich = new PhillyCheeseSteak();
+//            case 3 -> sandwich = new ClassicClub();
+//            case 4 -> sandwich = new HamAndCheese();
+//            case 5 -> sandwich = new ChickenCaesarWrap();
+//            default -> System.out.println("Invalid input.Try again");
+//        }
+//    }
+//
+//    public static void customiseSignatureSandwich(){
+//
+//    }
     /**
     Lets the customer confirm their checkout or cancel the order
     @param order the customer's order

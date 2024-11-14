@@ -24,6 +24,7 @@ public class AddDrinkGUI {
     }
 
     public static Size selectDrinkSize(){
+        //Used an array so I could change the value in the lambda expression
         Size[] size = {Size.Small};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -49,6 +50,7 @@ public class AddDrinkGUI {
     }
 
     public static DrinkFlavor selectDrinkFlavor(){
+        //Used an array so I could change the value in the lambda expression
         DrinkFlavor[] flavor = {DrinkFlavor.lime};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());

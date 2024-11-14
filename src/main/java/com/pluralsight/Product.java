@@ -11,6 +11,8 @@ import java.util.Objects;
 public abstract class Product {
     protected Size size;
 
+    public Product(){}
+
     public Product(Size size) {
         this.size = size;
     }

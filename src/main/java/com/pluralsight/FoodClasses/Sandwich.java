@@ -20,6 +20,7 @@ public class Sandwich extends Product {
     private List<Sauces> sauces;
     private List<Sides> sides;
 
+    public Sandwich(){};
 
     public Sandwich(Size size, Bread bread, boolean isToasted) {
         super(size);
@@ -76,9 +77,9 @@ public class Sandwich extends Product {
      */
     public void removeRegularTopping(RegularToppings t) {
         if (regularToppings.remove(t))
-            System.out.println("Removed successfully");
+            JOptionPane.showMessageDialog(null, "Removed successfully");
         else
-            System.out.println("Item was not present");
+            JOptionPane.showMessageDialog(null, "Item not present");
     }
 
     /**
@@ -106,7 +107,11 @@ public class Sandwich extends Product {
     }
 
     public void removeMeat(Meat meat) {
-        meats.remove(meat);
+
+        if (meats.remove(meat))
+            JOptionPane.showMessageDialog(null, "Removed successfully");
+        else
+            JOptionPane.showMessageDialog(null, "Item not present");
     }
 
     /**
@@ -137,7 +142,10 @@ public class Sandwich extends Product {
 
 
     public void removeCheese(Cheeses cheese) {
-        cheeses.remove(cheese);
+        if (cheeses.remove(cheese))
+            JOptionPane.showMessageDialog(null, "Removed successfully");
+        else
+            JOptionPane.showMessageDialog(null, "Item not present");
     }
 
     /**
@@ -167,7 +175,10 @@ public class Sandwich extends Product {
     }
 
     public void removeSauce(Sauces sauce) {
-        sauces.remove(sauce);
+        if (sauces.remove(sauce))
+            JOptionPane.showMessageDialog(null, "Removed successfully");
+        else
+            JOptionPane.showMessageDialog(null, "Item not present");
     }
 
     /**
@@ -197,7 +208,10 @@ public class Sandwich extends Product {
     }
 
     public void removeSide(Sides side) {
-        sides.remove(side);
+        if (sides.remove(side))
+            JOptionPane.showMessageDialog(null, "Removed successfully");
+        else
+            JOptionPane.showMessageDialog(null, "Item not present");
     }
 
     @Override
@@ -261,23 +275,40 @@ public class Sandwich extends Product {
         return hasExtraCheese ? costOfExtraCheese + cost * cheeses.size() : cost * cheeses.size();
     }
 
+    public int getSizeInInches(){
+
+        switch (this.size){
+            case Small -> {
+                return 4;
+            }
+            case Medium -> {
+                return 8;
+            }
+            case Large -> {
+                return 12;
+            }
+        }
+        //Dummy return statement
+        return -1;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Sandwich sandwich)) return false;
         if (!super.equals(o)) return false;
-        return size == sandwich.getSize() && isToasted() == sandwich.isToasted() && isHasExtraMeat() == sandwich.isHasExtraMeat() && isHasExtraCheese() == sandwich.isHasExtraCheese() && getBread() == sandwich.getBread() && Objects.equals(getRegularToppings(), sandwich.getRegularToppings()) && Objects.equals(getMeats(), sandwich.getMeats()) && Objects.equals(getCheeses(), sandwich.getCheeses()) && Objects.equals(getSauces(), sandwich.getSauces()) && Objects.equals(getSides(), sandwich.getSides());
+        return size == sandwich.getSize() && isToasted() == sandwich.isToasted() && hasExtraMeat() == sandwich.hasExtraMeat() && hasExtraCheese() == sandwich.hasExtraCheese() && getBread() == sandwich.getBread() && Objects.equals(getRegularToppings(), sandwich.getRegularToppings()) && Objects.equals(getMeats(), sandwich.getMeats()) && Objects.equals(getCheeses(), sandwich.getCheeses()) && Objects.equals(getSauces(), sandwich.getSauces()) && Objects.equals(getSides(), sandwich.getSides());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getBread(), isToasted(), isHasExtraMeat(), isHasExtraCheese(), getRegularToppings(), getMeats(), getCheeses(), getSauces(), getSides());
+        return Objects.hash(super.hashCode(), getBread(), isToasted(), hasExtraMeat(), hasExtraCheese(), getRegularToppings(), getMeats(), getCheeses(), getSauces(), getSides());
     }
 
     @Override
     public String toString() {
         return "Sandwich{"+
-        "size:" + size +
+        "size:" + getSizeInInches() +" inches" +
                 ", bread:" + bread +
                 ", toasted:" + isToasted +
                 ", extraMeat:" + hasExtraMeat +
@@ -303,11 +334,11 @@ public class Sandwich extends Product {
         return isToasted;
     }
 
-    public boolean isHasExtraMeat() {
+    public boolean hasExtraMeat() {
         return hasExtraMeat;
     }
 
-    public boolean isHasExtraCheese() {
+    public boolean hasExtraCheese() {
         return hasExtraCheese;
     }
 

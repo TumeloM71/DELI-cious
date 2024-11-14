@@ -17,7 +17,7 @@ public class GraphicalUserInterface {
         MyFrame myFrame = new MyFrame();
         myFrame.setTitle("Home");
         myFrame.setLayout(new BorderLayout());
-        JLabel title = new JLabel("Welcome to the Sandwich Shop!");
+        JLabel title = new JLabel("Welcome to the DELI-cious Sandwich Shop!");
         JPanel panel1 = new JPanel();
         panel1.setBackground(Color.ORANGE);
         JPanel panel2 = new JPanel();
@@ -57,7 +57,10 @@ public class GraphicalUserInterface {
         JButton b5 = new JButton("Cancel order");
         b5.addActionListener( e -> { myFrame.dispose(); order.cancelOrder(); GraphicalUserInterface.homeScreen(); });
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
+        JButton b6 = new JButton("Add Signature Sandwich");
+        b6.addActionListener(e -> {myFrame.dispose(); AddSandwichGUI.addSignatureSandwich(order);});
+
+        panel.add(b1); panel.add(b6); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -82,7 +85,10 @@ public class GraphicalUserInterface {
         JButton b5 = new JButton("Cancel order");
         b5.addActionListener( e -> { myFrame.dispose(); order.cancelOrder(); GraphicalUserInterface.homeScreen(); });
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
+        JButton b6 = new JButton("Add Signature Sandwich");
+        b6.addActionListener(e -> {myFrame.dispose(); AddSandwichGUI.addSignatureSandwich(order);});
+
+        panel.add(b1); panel.add(b6); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
