@@ -1,6 +1,5 @@
 package com.pluralsight.FoodClasses;
 
-import com.pluralsight.Product;
 import com.pluralsight.enums.*;
 
 import javax.swing.*;

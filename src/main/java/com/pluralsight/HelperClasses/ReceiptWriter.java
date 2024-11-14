@@ -1,7 +1,6 @@
 package com.pluralsight.HelperClasses;
 
-import com.pluralsight.Order;
-import com.pluralsight.Product;
+import com.pluralsight.FoodClasses.Product;
 
 import java.awt.*;
 import java.io.BufferedWriter;

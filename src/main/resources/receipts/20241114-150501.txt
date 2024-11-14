@@ -1,0 +1,48 @@
+DELI-cious Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241114-150501
+Item Count: 13
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Drink{Flavor: lime, Size: Medium, Cost: $2.50} Amount: 3
+Chicken Caesar Wrap Sandwich{size:8 inches, bread:wrap, toasted:false, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, tomatoes]
+, meat:[chicken]
+, cheese:[provolone]
+, sauces:[ranch]
+, sides:[]
+, cost: $10.50} Amount: 2
+Drink{Flavor: grape, Size: Large, Cost: $3.00} Amount: 1
+BLT Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, tomatoes]
+, meat:[bacon]
+, cheese:[cheddar]
+, sauces:[ranch]
+, sides:[]
+, cost: $10.50} Amount: 1
+Ham & Cheese Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[tomatoes]
+, meat:[ham]
+, cheese:[cheddar]
+, sauces:[]
+, sides:[]
+, cost: $10.50} Amount: 1
+Philly Cheese Steak Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[peppers]
+, meat:[steak]
+, cheese:[american]
+, sauces:[mayo]
+, sides:[]
+, cost: $10.50} Amount: 1
+Drink{Flavor: orange, Size: Small, Cost: $2.00} Amount: 3
+Classic Club Sandwich{size:8 inches, bread:white, toasted:false, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, pickles, tomatoes]
+, meat:[ham, bacon, roastBeef]
+, cheese:[american, swiss]
+, sauces:[mayo]
+, sides:[au_jus]
+, cost: $16.00} Amount: 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $85.00

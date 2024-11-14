@@ -1,6 +1,6 @@
 package com.pluralsight.GUIClasses;
 
-import com.pluralsight.Order;
+import com.pluralsight.HelperClasses.Order;
 import com.pluralsight.HelperClasses.ReceiptWriter;
 
 import javax.swing.*;

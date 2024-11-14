@@ -1,6 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.HelperClasses;
 
-import com.pluralsight.HelperClasses.ReceiptWriter;
+import com.pluralsight.FoodClasses.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;

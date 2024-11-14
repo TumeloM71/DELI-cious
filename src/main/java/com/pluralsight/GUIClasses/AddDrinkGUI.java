@@ -1,7 +1,7 @@
 package com.pluralsight.GUIClasses;
 
 import com.pluralsight.FoodClasses.Drink;
-import com.pluralsight.Order;
+import com.pluralsight.HelperClasses.Order;
 import com.pluralsight.enums.DrinkFlavor;
 import com.pluralsight.enums.Size;
 

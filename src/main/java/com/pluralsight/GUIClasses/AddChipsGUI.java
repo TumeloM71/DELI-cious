@@ -1,7 +1,7 @@
 package com.pluralsight.GUIClasses;
 
 import com.pluralsight.FoodClasses.Chips;
-import com.pluralsight.Order;
+import com.pluralsight.HelperClasses.Order;
 import com.pluralsight.enums.ChipType;
 import com.pluralsight.enums.Size;
 

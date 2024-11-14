@@ -1,7 +1,6 @@
 package com.pluralsight.HelperClasses;
 
 import com.pluralsight.FoodClasses.*;
-import com.pluralsight.Order;
 import com.pluralsight.enums.*;
 
 import java.util.Scanner;
