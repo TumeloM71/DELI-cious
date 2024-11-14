@@ -1,0 +1,20 @@
+DELI-cious Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241114-140104
+Item Count: 4
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Drink{Flavor: lime, Size: Medium, Cost: $2.50} Amount: 1
+Chips{Type: steak_fries, Size:Medium, Cost: $1.50} Amount: 1
+Chips{Type: curly_fries, Size:Medium, Cost: $1.50} Amount: 1
+Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[tomatoes]
+, meat:[ham]
+, cheese:[american]
+, sauces:[mayo]
+, sides:[]
+, cost: $10.50} Amount: 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $16.00

@@ -32,7 +32,7 @@ public class AddSandwichGUI {
     public static void addSignatureSandwich(Order order){
 
         Sandwich sandwich = signatureSandwichMenu();
-        customizeSignatureSandwich(sandwich);
+        customizeSandwich(sandwich);
         order.addItem(sandwich);
         GraphicalUserInterface.orderScreen(order);
     }
@@ -76,10 +76,10 @@ public class AddSandwichGUI {
      * Menu for adding/removing toppings from the customer's Sandwich
      * @param sandwich the customer's Sandwich
      */
-    public static void customizeSignatureSandwich(Sandwich sandwich){
+    public static void customizeSandwich(Sandwich sandwich){
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
-        myFrame.setTitle("Customise Signature Sandwich");
+        myFrame.setTitle("Customise Sandwich");
         JPanel panel = new JPanel();
         panel.setBackground(Color.orange);
 
@@ -147,7 +147,7 @@ public class AddSandwichGUI {
         }
 
         JButton b0 = new JButton("Done");
-        b0.addActionListener(e -> {myFrame.dispose(); customizeSignatureSandwich(sandwich);});
+        b0.addActionListener(e -> {myFrame.dispose(); customizeSandwich(sandwich);});
         panel.add(b0);
 
         myFrame.add(panel);
@@ -239,7 +239,7 @@ public class AddSandwichGUI {
         b5.addActionListener( e ->{ myFrame.dispose(); selectSides(sandwich);} );
         JButton b6 = new JButton("Done");
         b6.addActionListener(e -> {JOptionPane.showMessageDialog(null, sandwich);
-            myFrame.dispose();} );
+            myFrame.dispose(); customizeSandwich(sandwich);} );
 
         panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         panel.add(b6);

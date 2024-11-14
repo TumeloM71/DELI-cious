@@ -74,7 +74,7 @@ public class Order {
         productQuantityMap.keySet().forEach(p -> output.append(p).append(" Amount: ")
         .append(productQuantityMap.get(p)).append("\n"));
 
-        output.append("Cost: $").append(getTotalCost());
+        output.append(String.format("Cost: $%.2f",getTotalCost()));
 
         return output.toString();
     }

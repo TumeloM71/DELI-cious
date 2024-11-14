@@ -14,6 +14,7 @@ import java.awt.*;
 public class GraphicalUserInterface {
 
     public static void homeScreen(){
+
         MyFrame myFrame = new MyFrame();
         myFrame.setTitle("Home");
         myFrame.setLayout(new BorderLayout());
