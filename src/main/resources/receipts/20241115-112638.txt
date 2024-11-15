@@ -1,0 +1,26 @@
+DELI-cious Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241115-112638
+Item Count: 4
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Drink{Flavor: orange, Size: Medium, Cost: $2.50} Amount: 1
+Drink{Flavor: lime, Size: Medium, Cost: $2.50} Amount: 1
+Sandwich{size:8 inches, bread:wheat, toasted:true, extraMeat:true, extraCheese:true
+, regularToppings:[tomatoes]
+, meat:[ham]
+, cheese:[cheddar]
+, sauces:[mayo]
+, sides:[]
+, cost: $12.10} Amount: 1
+Ham & Cheese Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[tomatoes]
+, meat:[ham]
+, cheese:[cheddar]
+, sauces:[]
+, sides:[]
+, cost: $10.50} Amount: 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $27.60

@@ -59,27 +59,31 @@ public class CommandLineInterface {
 
 //    public static void addSignatureSandwich(Order order){
 //
-//        int sandwichSelection;
-//        System.out.println("""
+//        int sandwichSelection = -1;
+//        Sandwich sandwich = new Sandwich();
+//        while (true) {
+//            System.out.println("""
 //                    1) BLT \s
 //                    2) Philly Cheese Steak \s
 //                    3) Classic Club \s
 //                    4) Ham & Cheese \s
 //                    5) Chicken Caesar Wrap \s
+//                    6) Done
 //                    0) Cancel Order""");
 //
-//        sandwichSelection = Utilities.getIntValue(input.nextLine().trim());
-//        Sandwich sandwich;
-//        switch (sandwichSelection){
-//            case 1 -> sandwich = new BLT();
-//            case 2 -> sandwich = new PhillyCheeseSteak();
-//            case 3 -> sandwich = new ClassicClub();
-//            case 4 -> sandwich = new HamAndCheese();
-//            case 5 -> sandwich = new ChickenCaesarWrap();
-//            default -> System.out.println("Invalid input.Try again");
+//            sandwichSelection = Utilities.getIntValue(input.nextLine().trim());
+//            switch (sandwichSelection) {
+//                case 1 -> sandwich = new BLT();
+//                case 2 -> sandwich = new PhillyCheeseSteak();
+//                case 3 -> sandwich = new ClassicClub();
+//                case 4 -> sandwich = new HamAndCheese();
+//                case 5 -> sandwich = new ChickenCaesarWrap();
+//                default -> System.out.println("Invalid input.Try again");
+//            }
 //        }
-//    }
 //
+//    }
+
 //    public static void customiseSignatureSandwich(){
 //
 //    }

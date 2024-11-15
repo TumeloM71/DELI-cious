@@ -1,0 +1,27 @@
+DELI-cious Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241115-113410
+Item Count: 6
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Philly Cheese Steak Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:false, extraCheese:false
+, regularToppings:[]
+, meat:[steak]
+, cheese:[american]
+, sauces:[mayo, ketchup]
+, sides:[]
+, cost: $10.50} Amount: 1
+Drink{Flavor: orange, Size: Medium, Cost: $2.50} Amount: 2
+Chips{Type: curly_fries, Size:Small, Cost: $1.50} Amount: 1
+Sandwich{size:8 inches, bread:white, toasted:true, extraMeat:true, extraCheese:true
+, regularToppings:[]
+, meat:[ham]
+, cheese:[cheddar]
+, sauces:[mayo]
+, sides:[sauce, au_jus]
+, cost: $12.10} Amount: 1
+Chips{Type: curly_fries, Size:Medium, Cost: $1.50} Amount: 1
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $30.60

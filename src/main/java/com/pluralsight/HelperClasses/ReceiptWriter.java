@@ -36,6 +36,7 @@ public class ReceiptWriter {
             Map<Product,Integer> productQuantityMap = order.productToQuantityMap();
             for(Product p : productQuantityMap.keySet()){
                 bufferedWriter.write(p + " Amount: "+productQuantityMap.get(p)+"\n");
+                bufferedWriter.write("\n");
             }
 
             bufferedWriter.write(dashedLine+"\n");
