@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DELI-cious:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DELI_cious_jar</output-path>
+    <root id="archive" name="DELI-cious.jar">
+      <element id="module-output" name="DELI-cious" />
+    </root>
+  </artifact>
+</component>

@@ -24,7 +24,7 @@ public class AddDrinkGUI {
     }
 
     public static Size selectDrinkSize(){
-        //Used an array so I could change the value in the lambda expression
+        //Used an array, so I could change the value in the lambda expression
         Size[] size = {Size.Small};
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
@@ -32,15 +32,13 @@ public class AddDrinkGUI {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
-        JButton b1 = new JButton("Small");
-        b1.addActionListener(e ->{ size[0] = Size.Small; myFrame.dispose();} );
-        JButton b2 = new JButton("Medium");
-        b2.addActionListener(e ->{ size[0] = Size.Medium; myFrame.dispose();} );
-        JButton b3 = new JButton("Large");
-        b3.addActionListener(e ->{ size[0] = Size.Large; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3);
-        myFrame.add(panel, BorderLayout.CENTER);
+        for (Size s : Size.values()){
+            JButton b1 = new JButton(s.toString());
+            b1.addActionListener(e ->{ size[0] = s; myFrame.dispose();} );
+            panel.add(b1);
+        }
 
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -58,15 +56,14 @@ public class AddDrinkGUI {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.ORANGE);
-        JButton b1 = new JButton("Orange");
-        b1.addActionListener(e ->{ flavor[0] = DrinkFlavor.orange; myFrame.dispose();} );
-        JButton b2 = new JButton("Lime");
-        b2.addActionListener(e ->{ flavor[0] = DrinkFlavor.lime; myFrame.dispose();} );
-        JButton b3 = new JButton("Grape");
-        b3.addActionListener(e ->{ flavor[0] = DrinkFlavor.grape; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3);
-        myFrame.add(panel, BorderLayout.CENTER);
 
+        for (DrinkFlavor drinkFlavor: DrinkFlavor.values()){
+            JButton b1 = new JButton(drinkFlavor.toString());
+            b1.addActionListener(e -> {flavor[0] = drinkFlavor; myFrame.dispose();});
+            panel.add(b1);
+        }
+
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);

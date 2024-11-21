@@ -165,18 +165,23 @@ public class AddSandwichGUI {
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
         myFrame.setTitle("Sandwich Size");
-
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
-        JButton b1 = new JButton("Small( 4 inches)");
-        b1.addActionListener(e ->{ size[0] = Size.Small; myFrame.dispose();} );
-        JButton b2 = new JButton("Medium( 8 inches)");
-        b2.addActionListener(e ->{ size[0] = Size.Medium; myFrame.dispose();} );
-        JButton b3 = new JButton("Large(12 inches)");
-        b3.addActionListener(e ->{ size[0] = Size.Large; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3);
-        myFrame.add(panel, BorderLayout.CENTER);
 
+        for (Size s : Size.values()){
+            int sizeInInches = 4;
+            switch (s){
+                case Small ->{}
+                case Medium -> sizeInInches = 8;
+                case Large -> sizeInInches = 12;
+            }
+
+            JButton b1 = new JButton(s.toString()+String.format(" (%d inches)",sizeInInches));
+            b1.addActionListener(e ->{ size[0] = s; myFrame.dispose();} );
+            panel.add(b1);
+        }
+
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -192,24 +197,19 @@ public class AddSandwichGUI {
 
         //Used an array so I could change the value in the lambda expression
         Bread[] bread = {Bread.wheat};
-
         JDialog myFrame = new JDialog();
         myFrame.setLayout(new BorderLayout());
         myFrame.setTitle("Sandwich Bread");
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
 
-        JButton b1 = new JButton("White");
-        b1.addActionListener(e ->{ bread[0] = Bread.white; myFrame.dispose();} );
-        JButton b2 = new JButton("Wheat");
-        b2.addActionListener(e ->{  bread[0] = Bread.wheat; myFrame.dispose();});
-        JButton b3 = new JButton("Rye");
-        b3.addActionListener(e ->{ bread[0] = Bread.rye; myFrame.dispose();});
-        JButton b4 = new JButton("Wrap");
-        b4.addActionListener(e ->{ bread[0] = Bread.wrap; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4);
-        myFrame.add(panel, BorderLayout.CENTER);
+        for (Bread b : Bread.values()){
+            JButton b1 = new JButton(b.toString());
+            b1.addActionListener(e ->{ bread[0] = b; myFrame.dispose();});
+            panel.add(b1);
+        }
 
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -263,25 +263,17 @@ public class AddSandwichGUI {
         JPanel panel = new JPanel();
         panel.setBackground(Color.PINK);
 
-        JButton b1 = new JButton("steak");
-        b1.addActionListener( e -> sandwich.addMeatGUI(Meat.steak));
-        JButton b2 = new JButton("ham");
-        b2.addActionListener( e -> sandwich.addMeatGUI(Meat.ham));
-        JButton b3 = new JButton("salami");
-        b3.addActionListener( e -> sandwich.addMeatGUI(Meat.salami));
-        JButton b4 = new JButton("roast beef");
-        b4.addActionListener(e -> sandwich.addMeatGUI(Meat.roastBeef));
-        JButton b5 = new JButton("chicken");
-        b5.addActionListener( e -> sandwich.addMeatGUI(Meat.chicken));
-        JButton b6 = new JButton("bacon");
-        b6.addActionListener(e -> sandwich.addMeatGUI(Meat.bacon));
+        for( Meat m : Meat.values()){
+            JButton b1 = new JButton(m.toString());
+            b1.addActionListener(e -> sandwich.addMeatGUI(m));
+            panel.add(b1);
+        }
+
         JButton b7 = new JButton("Done");
         b7.addActionListener( e -> { myFrame.dispose(); extraMeatPopUp(sandwich);toppingsAndSaucesMenu(sandwich);} );
+        panel.add(b7);
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
-        panel.add(b6); panel.add(b7);
         myFrame.add(panel,BorderLayout.CENTER);
-
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -307,8 +299,8 @@ public class AddSandwichGUI {
         b2.addActionListener(e ->{ sandwich.setHasExtraMeat(false); myFrame.dispose();});
 
         panel.add(label); panel.add(b1); panel.add(b2);
-        myFrame.add(panel);
 
+        myFrame.add(panel);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -324,20 +316,17 @@ public class AddSandwichGUI {
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
 
-        JButton b1 = new JButton("american");
-        b1.addActionListener( e -> sandwich.addCheeseGUI(Cheeses.american));
-        JButton b2 = new JButton("provolone");
-        b2.addActionListener(  e -> sandwich.addCheeseGUI(Cheeses.provolone));
-        JButton b3 = new JButton("cheddar");
-        b3.addActionListener(  e -> sandwich.addCheeseGUI(Cheeses.cheddar));
-        JButton b4 = new JButton("swiss");
-        b4.addActionListener(  e -> sandwich.addCheeseGUI(Cheeses.swiss));
+        for( Cheeses ch : Cheeses.values()){
+            JButton b1 = new JButton(ch.toString());
+            b1.addActionListener(e -> sandwich.addCheeseGUI(ch));
+            panel.add(b1);
+        }
+
         JButton b5 = new JButton("Done");
         b5.addActionListener(  e -> { myFrame.dispose(); extraCheesePopUp(sandwich); toppingsAndSaucesMenu(sandwich);} );
+        panel.add(b5);
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel, BorderLayout.CENTER);
-
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -362,8 +351,8 @@ public class AddSandwichGUI {
         b2.addActionListener(e ->{ sandwich.setHasExtraCheese(false); myFrame.dispose();});
 
         panel.add(label); panel.add(b1); panel.add(b2);
-        myFrame.add(panel);
 
+        myFrame.add(panel);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -383,31 +372,17 @@ public class AddSandwichGUI {
         JPanel panel = new JPanel();
         panel.setBackground(Color.GREEN);
 
-        JButton b1 = new JButton("lettuce");
-        b1.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.lettuce));
-        JButton b2 = new JButton("peppers");
-        b2.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.peppers));
-        JButton b3 = new JButton("onions");
-        b3.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.onions));
-        JButton b4 = new JButton("tomatoes");
-        b4.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.tomatoes));
-        JButton b5 = new JButton("jalapenos");
-        b5.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.jalepenos));
-        JButton b6 = new JButton("cucumbers");
-        b6.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.cucumbers));
-        JButton b7 = new JButton("pickles");
-        b7.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.pickles));
-        JButton b8 = new JButton("guacamole");
-        b8.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.guacamole));
-        JButton b9 = new JButton("mushrooms");
-        b9.addActionListener( e -> sandwich.addRegularToppingsGUI(RegularToppings.mushrooms));
+        for (RegularToppings r : RegularToppings.values()){
+            JButton b1 = new JButton(r.toString());
+            b1.addActionListener(e -> sandwich.addRegularToppings(r));
+            panel.add(b1);
+        }
+
         JButton b0 = new JButton("Done");
         b0.addActionListener( e ->{  myFrame.dispose(); toppingsAndSaucesMenu(sandwich);});
+        panel.add(b0);
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
-        panel.add(b6); panel.add(b7); panel.add(b8); panel.add(b9); panel.add(b0);
         myFrame.add(panel,BorderLayout.CENTER);
-
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -425,16 +400,18 @@ public class AddSandwichGUI {
         JPanel panel = new JPanel();
         panel.setBackground(Color.GREEN);
 
-        JButton b1 = new JButton("au jus");
-        b1.addActionListener( e -> sandwich.addSideGUI(Sides.au_jus));
-        JButton b2 = new JButton("sauce");
-        b2.addActionListener( e -> sandwich.addSideGUI(Sides.sauce));
+        for (Sides s : Sides.values()){
+            JButton b1 = new JButton(s.toString());
+            b1.addActionListener(e -> sandwich.addSideGUI(s));
+            panel.add(b1);
+        }
+
+
         JButton b0 = new JButton("Done");
         b0.addActionListener( e ->{  myFrame.dispose(); toppingsAndSaucesMenu(sandwich);});
+        panel.add(b0);
 
-        panel.add(b1); panel.add(b2); panel.add(b0);
         myFrame.add(panel,BorderLayout.CENTER);
-
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -452,25 +429,17 @@ public class AddSandwichGUI {
         JPanel panel = new JPanel();
         panel.setBackground(Color.RED);
 
-        JButton b1 = new JButton("mayo");
-        b1.addActionListener( e -> sandwich.addSauceGUI(Sauces.mayo));
-        JButton b2 = new JButton("mustard");
-        b2.addActionListener( e -> sandwich.addSauceGUI(Sauces.mustard));
-        JButton b3 = new JButton("ketchup");
-        b3.addActionListener( e -> sandwich.addSauceGUI(Sauces.ketchup));
-        JButton b4 = new JButton("ranch");
-        b4.addActionListener( e -> sandwich.addSauceGUI(Sauces.ranch));
-        JButton b5 = new JButton("thousand islands");
-        b5.addActionListener( e -> sandwich.addSauceGUI(Sauces.thousandIslands));
-        JButton b6 = new JButton("vinaigrette");
-        b6.addActionListener( e -> sandwich.addSauce(Sauces.vinaigrette));
+        for (Sauces s : Sauces.values())
+        {
+            JButton b1 = new JButton(s.toString());
+            b1.addActionListener(e -> sandwich.addSauceGUI(s));
+            panel.add(b1);
+        }
         JButton b0 = new JButton("Done");
         b0.addActionListener( e ->{  myFrame.dispose(); toppingsAndSaucesMenu(sandwich);});
+        panel.add(b0);
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
-        panel.add(b6); panel.add(b0);
         myFrame.add(panel,BorderLayout.CENTER);
-
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);

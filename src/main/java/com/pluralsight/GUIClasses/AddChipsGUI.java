@@ -35,15 +35,14 @@ public class AddChipsGUI {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
-        JButton b1 = new JButton("Small");
-        b1.addActionListener(e ->{ size[0] = Size.Small; myFrame.dispose();} );
-        JButton b2 = new JButton("Medium");
-        b2.addActionListener(e ->{ size[0] = Size.Medium; myFrame.dispose();} );
-        JButton b3 = new JButton("Large");
-        b3.addActionListener(e ->{ size[0] = Size.Large; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3);
-        myFrame.add(panel, BorderLayout.CENTER);
 
+        for (Size s : Size.values()){
+            JButton b1 = new JButton(s.toString());
+            b1.addActionListener(e ->{ size[0] = s; myFrame.dispose();} );
+            panel.add(b1);
+        }
+
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
@@ -65,15 +64,14 @@ public class AddChipsGUI {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.YELLOW);
-        JButton b1 = new JButton("Curly fries");
-        b1.addActionListener(e ->{ type[0] = ChipType.curly_fries; myFrame.dispose();} );
-        JButton b2 = new JButton("Steak fries");
-        b2.addActionListener(e ->{ type[0] = ChipType.steak_fries; myFrame.dispose();} );
-        JButton b3 = new JButton("Potato Wedges");
-        b3.addActionListener(e ->{ type[0] = ChipType.potato_wedges; myFrame.dispose();} );
-        panel.add(b1); panel.add(b2); panel.add(b3);
-        myFrame.add(panel, BorderLayout.CENTER);
 
+        for( ChipType chipType : ChipType.values()){
+            JButton b1 = new JButton(chipType.toString());
+            b1.addActionListener(e -> {type[0] = chipType; myFrame.dispose();});
+            panel.add(b1);
+        }
+
+        myFrame.add(panel, BorderLayout.CENTER);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));
         myFrame.setLocationRelativeTo(null);
