@@ -42,3 +42,9 @@ Adding a Signature Sandwich
 ![Screenshot (130)](https://github.com/user-attachments/assets/8fd9d73c-0d5e-4576-bc9c-e309fa7c65ea)
 ![Screenshot (131)](https://github.com/user-attachments/assets/34163f54-8f7c-4ea3-9c12-3d2143c6b39f)
 ![Screenshot (132)](https://github.com/user-attachments/assets/8a695e1a-5475-4636-801d-2eeb7ebb0f15)
+
+Interesting Code:
+I had to use an array with one element when I wanted to change the value of a variable inside a lambda expression to avoid breaking the "effectively final" rule for variables passed into lambdas.
+![Screenshot (133)](https://github.com/user-attachments/assets/e3295ef6-4aac-41e0-b943-99af4d4cee15)
+![Screenshot (134)](https://github.com/user-attachments/assets/8449f755-0c49-49a4-a794-648642f35150)
+![Screenshot (135)](https://github.com/user-attachments/assets/c9440958-329f-48bd-a2c2-1c1688c51003)
