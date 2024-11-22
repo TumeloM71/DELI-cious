@@ -21,6 +21,5 @@ public class MainApp {
        else
            CommandLineInterface.homeScreen();
 
-
     }
 }

@@ -51,18 +51,12 @@ public class AddSandwichGUI {
 
         Sandwich[] sandwich = {new Sandwich()};
 
-        JButton b1 = new JButton("BLT");
-        b1.addActionListener(e ->{ myFrame.dispose(); sandwich[0] = new BLT();} );
-        JButton b2 = new JButton("Chicken Caesar Wrap");
-        b2.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new ChickenCaesarWrap();});
-        JButton b3 = new JButton("Classic Club");
-        b3.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new ClassicClub();});
-        JButton b4 = new JButton("Ham & Cheese");
-        b4.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new HamAndCheese();});
-        JButton b5 = new JButton("Philly Cheese Steak");
-        b5.addActionListener(e -> {myFrame.dispose(); sandwich[0] = new PhillyCheeseSteak();});
+        for( SignatureSandwichMenu s : SignatureSandwichMenu.values()){
+            JButton b1 = new JButton(s.toString());
+            b1.addActionListener(e -> { myFrame.dispose(); sandwich[0] = s.getSandwich();} );
+            panel.add(b1);
+        }
 
-        panel.add(b1); panel.add(b2); panel.add(b3); panel.add(b4); panel.add(b5);
         myFrame.add(panel);
         myFrame.setModal(true);
         myFrame.setSize(new Dimension(400,400));

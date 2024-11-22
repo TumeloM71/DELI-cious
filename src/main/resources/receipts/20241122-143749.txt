@@ -1,0 +1,26 @@
+DELI-cious Sandwich Shop, Dallas, TX
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Date & Time: 20241122-143749
+Item Count: 3
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Chicken Caesar Wrap Sandwich{size:8 inches, bread:wrap, toasted:false, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, tomatoes]
+, meat:[chicken]
+, cheese:[provolone]
+, sauces:[ranch]
+, sides:[]
+, cost: $10.50} Amount: 1
+
+Classic Club Sandwich{size:8 inches, bread:white, toasted:false, extraMeat:false, extraCheese:false
+, regularToppings:[lettuce, pickles, tomatoes]
+, meat:[ham, bacon, roastBeef]
+, cheese:[american, swiss]
+, sauces:[]
+, sides:[]
+, cost: $16.00} Amount: 2
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total: $42.50
